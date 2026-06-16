@@ -197,7 +197,7 @@ def post():
         
     return render_template("post.html",data=data)
 
-BASE_DIR = os.path.dirname(os.path.abspath(__file__))
+
 DOWNLOAD_FOLDER = os.path.join(
     app.root_path,
     "static",
