@@ -209,10 +209,12 @@ def downloadresume(filename):
         return "file not found", 404
 
     return send_from_directory(
-        DOWNLOAD_FOLDER,
-        filename,
-        as_attachment=True
-    )
+        DOWNLOAD_FOLDER = os.path.join(
+    app.root_path,
+    "static",
+    "assets",
+    "resume"
+)
     
     
 @app.route("/contact", methods=["GET", "POST"])
