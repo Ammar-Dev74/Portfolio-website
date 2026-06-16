@@ -205,12 +205,16 @@ DOWNLOAD_FOLDER = os.path.join(
     "resume"
 )
 
+BASE_DIR = os.path.dirname(os.path.abspath(__file__))
+DOWNLOAD_FOLDER = os.path.join(BASE_DIR, 'static', 'assets', 'resume')
+
 @app.route("/download/<filename>")
+
 def downloadresume(filename):
     file_path = os.path.join(DOWNLOAD_FOLDER, filename)
 
     if not os.path.isfile(file_path):
-        return f"File not found: {file_path}", 404
+        return "file not found", 404
 
     return send_from_directory(
         DOWNLOAD_FOLDER,
