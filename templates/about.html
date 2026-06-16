@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <title>About Me | Ammar Khan</title>
+  <meta name="description" content="">
+  <meta name="keywords" content="">
+
+ 
+
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com" rel="preconnect">
+  <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Mukta:wght@200;300;400;500;600;700;800&family=Abel:wght@400&display=swap" rel="stylesheet">
+
+  <!-- Vendor CSS Files -->
+  <link href="/static/assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="/static/assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+  <link href="/static/assets/vendor/aos/aos.css" rel="stylesheet">
+  <link href="/static/assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+  <link href="/static/assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+
+  <!-- Main CSS File -->
+  <link href="/static/assets/css/main.css" rel="stylesheet">
+
+
+
+</head>
+
+<body class="index-page">
+ <header id="header" class="header d-flex align-items-center position-relative">
+    <div class="container-fluid position-relative d-flex align-items-center justify-content-between ">
+
+      <a href="/" class="logo d-flex align-items-center">
+        <!-- Uncomment the line below if you also wish to use an image logo -->
+        <img src="/static/assets/img/logo.png" alt="logo" class="logo-circle">
+        <h1 class="sitename"></h1>
+        </a>
+
+     <div class="main-links d-none d-xl-flex align-items-center ">
+            <a href="/" class="nav-link">Home</a>
+          <a href="/about" class="nav-link">About</a>
+          <a href="/projects" class="nav-link">Projects</a>
+          
+          <a href="/learn" class="nav-link">learn</a>
+          <a href="/post" class="nav-link">post</a>
+      </div>
+    <nav id="navmenu" class="navmenu">
+  <ul>
+
+    <!-- MOBILE-ONLY LINKS -->
+     <li class="d-xl-none"><a href="/">Home</a></li>
+ <li class="d-xl-none"><a href="/about">About</a></li>
+    <li class="d-xl-none"><a href="/projects">Projects</a></li>
+ 
+    <li class="d-xl-none"><a href="/learn">learn </a></li>
+    <li class="d-xl-none"><a href="/post">post</a></li>
+
+    {% if current_user.is_authenticated %}
+
+      <!-- AUTH USER DROPDOWN -->
+      <li class="dropdown">
+        <a>
+          <span>Welcome {{ current_user.first_name }}</span>
+          <i class="bi bi-chevron-down toggle-dropdown"></i>
+        </a>
+        <ul>
+          <li><a href="/logout">Logout</a></li>
+        </ul>
+      </li>
+
+    {% else %}
+
+      <!-- GUEST LINKS -->
+      <li><a href="/signup">Signup</a></li>
+      <li><a href="/login">Login</a></li>
+
+    {% endif %}
+
+    <!-- ALWAYS VISIBLE -->
+    <li><a href="/contact">Contact</a></li>
+
+  </ul>
+
+  <!-- MOBILE TOGGLE -->
+  <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
+</nav>
+
+
+   
+  </header>
+
+<!-- ✅ ABOUT CONTENT (SINGLE, CLEAN SECTION) -->
+<div class="container section-title " data-aos="fade-up" >
+
+        <span class="description-title">About Me</span>
+        <h2>About Me</h2>
+ 
+</div>
+<div class="container">
+  <div class="row align-items-start g-5">
+
+
+    <!-- Left Content -->
+    <div class="col-lg-8">
+
+      <p class="about-text">
+        I'm <strong>Ammar Khan</strong>, a Python backend developer eager to craft efficient and
+        readable backend solutions. I have hands-on experience with Flask and MySQL, and I'm
+        enthusiastic about building REST APIs.
+      </p>
+
+      <p class="about-text">
+        My journey began with a curiosity for how web applications work, and now I enjoy
+        creating seamless, data-driven functionalities.
+      </p>
+
+      <!-- Skill Badges -->
+      <div class="glass-card-about mt-4">
+        <h6 class="card-title-about">Skill Badges</h6>
+        <div class="skill-badges">
+          <span class="badge">Python</span>
+          <span class="badge">Flask</span>
+          <span class="badge">MySQL</span>
+          <span class="badge">Bootstrap</span>
+          <span class="badge">CSS</span>
+          <span class="badge">REST API</span>
+          <span class="badge">MACHINE LEARNING</span>
+          <span class="badge">Git & GitHub</span>
+          
+        </div>
+      </div>
+
+      <!-- Learning & Education -->
+      <div class="row mt-4 g-4">
+
+        <div class="col-md-6">
+          <div class="glass-card-about h-100">
+            <h6 class="card-title-about">Currently Learning</h6>
+            <ul class="info-list">
+              <li>REST API Development</li>
+              <li>Authentication and JWT</li>
+              <li>Deployment</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="col-md-6">
+          <div class="glass-card-about h-100">
+            <h6 class="card-title-about">Education</h6>
+          
+            <p class="edu-text">
+              <strong>B.Tech. Information Technology</strong><br>
+               Dr. A. P. J. Abdul Kalam Technical University, Lucknow<br>
+              2022 – 2025
+            </p>
+              <p class="edu-text">
+              <strong>Diploma. computer science</strong><br>
+                Board Of Technical Education, Lucknow<br>
+              2019 – 2022
+            </p>
+         </div>
+        </div>
+         </div>
+     
+    </div>
+ 
+
+    <!-- Right Profile Card -->
+    <div class="col-lg-4">
+      <div class="profile-card-about text-center">
+        <img src="/static/assets/img/about/about me.jpeg" alt="Ammar Khan" class="profile-img-about">
+
+        <h5 class="mt-3 mb-1">Ammar Khan</h5>
+
+        <div class="contact-info-about">
+         
+          <a href="https://linkedin.com/in/ammar-khan-590316248">linkedin</a>
+        </div>
+      </div>
+    
+  </div>
+  </div>
+  
+<hr>
+
+<footer class="site-footer">
+  <div class="footer-content">
+   
+    <p class="copyright">
+      © 2026 <strong>ammarkhan</strong>
+    </p>
+  </div>
+</footer>
+
+
+
+
+
+  <!-- Preloader -->
+  <div id="preloader"></div>
+ 
+
+ 
+
+  <!-- Vendor JS Files -->
+  <script src="/static/assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+ 
+  <script src="/static/assets/vendor/aos/aos.js"></script>
+  <script src="/static/assets/vendor/purecounter/purecounter_vanilla.js"></script>
+  <script src="/static/assets/vendor/imagesloaded/imagesloaded.pkgd.min.js"></script>
+  <script src="/static/assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
+  <script src="/static/assets/vendor/swiper/swiper-bundle.min.js"></script>
+  <script src="/static/assets/vendor/glightbox/js/glightbox.min.js"></script>
+
+  <!-- Main JS File -->
+  <script src="/static/assets/js/main.js"></script>
+
+</body>
+
+</html>

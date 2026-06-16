@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <title>Ammar Khan</title>
+  <meta name="description" content="">
+  <meta name="keywords" content="">
+
+ 
+
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com" rel="preconnect">
+  <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Mukta:wght@200;300;400;500;600;700;800&family=Abel:wght@400&display=swap" rel="stylesheet">
+
+  <!-- Vendor CSS Files -->
+  <link href="/static/assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="/static/assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+  <link href="/static/assets/vendor/aos/aos.css" rel="stylesheet">
+  <link href="/static/assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+  <link href="/static/assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+
+  <!-- Main CSS File -->
+  <link href="/static/assets/css/main.css" rel="stylesheet">
+
+
+
+</head>
+
+<body class="index-page">
+
+  <header id="header" class="header d-flex align-items-center position-relative">
+    <div class="container-fluid position-relative d-flex align-items-center justify-content-between">
+      <a href="/" class="logo d-flex align-items-center">
+        <!-- Uncomment the line below if you also wish to use an image logo -->
+        <img src="/static/assets/img/logo.png" alt="logo" class="logo-circle">
+        <h1 class="sitename"></h1>
+        </a>
+       <div class="main-links d-none d-xl-flex align-items-center ">
+          <a href="/" class="nav-link">Home</a>
+          <a href="/about" class="nav-link">About</a>
+          <a href="/projects" class="nav-link">Projects</a>
+         
+          <a href="/learn" class="nav-link">learn</a>
+          <a href="/post" class="nav-link">post</a>
+      </div>
+    
+
+     <nav id="navmenu" class="navmenu ">
+        <ul>
+         <li class="d-xl-none"><a href="/">Home</a></li>
+    <li class="d-xl-none"><a href="/about">About</a></li>
+    <li class="d-xl-none"><a href="/projects">Projects</a></li>
+        <li class="d-xl-none"><a href="/learn">learn </a></li>
+    <li class="d-xl-none"><a href="/post">post</a></li>
+        
+      
+        
+
+      
+              <li><a href="/signup">Signup</a></li>
+              
+              <li><a href="/login">login</a></li>
+              
+              <li><a href="/contact">Contact</a></li>
+            </ul>
+         
+          
+       
+        <i class="mobile-nav-toggle  bi bi-list"></i>
+      </nav>
+
+    </div>
+  </header>
+            
+  <!-- Hero Section -->
+    <section id="hero" class="hero section">
+      <div class="container">
+        <div class="row align-items-center">
+          <div class="col-lg-6 hero-content" data-aos="fade-up" data-aos-delay="100">
+            
+
+        {% block form%}
+              
+            {% endblock form%}
+
+         
+
+           
+
+          </div>
+
+          <div class="col-lg-6 hero-visual" data-aos="fade-up" data-aos-delay="200">
+            <div class="image-wrapper">
+              
+
+              <div class="floating-element top-left">
+                <i class="bi bi-star-fill"></i>
+              </div>
+
+              <div class="floating-element bottom-right">
+                <i class="bi bi-circle-fill"></i>
+              </div>
+
+
+            <div class="client-counter">
+              <div class="counter-number">
+               
+              </div>
+              <div class="counter-text">
+                
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section><!-- /Hero Section -->
+
+
+  <main class="main">
+
+{% block body %}
+
+ {% endblock body %}
+  </main>
+
+
+
+  <hr>
+    <footer class="site-footer">
+  <div class="footer-content">
+
+ 
+    <p class="copyright">
+      © <span>2026</span> <strong>ammarkhan</strong>
+    </p>
+
+  </div>
+</footer>
+
+
+
+  <!-- Preloader -->
+  <div id="preloader"></div>
+
+  <!-- Vendor JS Files -->
+  <script src="/static/assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  
+  <script src="/static/assets/vendor/aos/aos.js"></script>
+  <script src="/static/assets/vendor/purecounter/purecounter_vanilla.js"></script>
+  <script src="/static/assets/vendor/imagesloaded/imagesloaded.pkgd.min.js"></script>
+  <script src="/static/assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
+  <script src="/static/assets/vendor/swiper/swiper-bundle.min.js"></script>
+  <script src="/static/assets/vendor/glightbox/js/glightbox.min.js"></script>
+
+  <!-- Main JS File -->
+  <script src="/static/assets/js/main.js"></script>
+
+</body>
+
+</html>

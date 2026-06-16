@@ -1,0 +1,211 @@
+
+
+{% block form %}
+
+
+{% include "messages.html" %}
+
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <title>Post | Ammar Khan</title>
+  <meta name="description" content="">
+  <meta name="keywords" content="">
+
+ 
+
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com" rel="preconnect">
+  <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Mukta:wght@200;300;400;500;600;700;800&family=Abel:wght@400&display=swap" rel="stylesheet">
+
+  <!-- Vendor CSS Files -->
+  <link href="/static/assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="/static/assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+  <link href="/static/assets/vendor/aos/aos.css" rel="stylesheet">
+  <link href="/static/assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+  <link href="/static/assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+
+  <!-- Main CSS File -->
+  <link href="/static/assets/css/main.css" rel="stylesheet">
+
+
+
+</head>
+
+<body class="index-page">
+
+  <header id="header" class="header d-flex align-items-center position-relative">
+    <div class="container-fluid position-relative d-flex align-items-center justify-content-between">
+      <a href="/" class="logo d-flex align-items-center">
+        <!-- Uncomment the line below if you also wish to use an image logo -->
+        <img src="/static/assets/img/logo.png" alt="logo" class="logo-circle">
+        <h1 class="sitename"></h1>
+        </a>
+     <div class="main-links d-none d-xl-flex align-items-center ">
+          <a href="/" class="nav-link">Home</a>
+          <a href="/about" class="nav-link">About</a>
+          <a href="/projects" class="nav-link">Projects</a>
+      
+          <a href="/learn" class="nav-link">learn</a>
+          <a href="/post" class="nav-link">post</a>
+      </div>
+    
+
+     <nav id="navmenu" class="navmenu ">
+        <ul>
+        
+    <li class="d-xl-none"><a href="/about">About</a></li>
+    
+    <li class="d-xl-none"><a href="/projects">Projects</a></li>
+        <li class="d-xl-none"><a href="/learn">learn </a></li>
+    <li class="d-xl-none"><a href="/post">post</a></li>
+        
+      
+        
+
+  
+              
+              <li><a href="/contact">Contact</a></li>
+            </ul>
+         
+          
+       
+        <i class="mobile-nav-toggle  bi bi-list"></i>
+      </nav>
+
+    </div>
+  </header>
+            
+ 
+<div class="subtitle ">
+<span>Add New post</span>              
+</div>
+<div class="container-fluid  d-flex ">                
+<div class="card p-3 ">
+    
+    <form method="POST" action="/post" enctype="multipart/form-data">
+        <div class="form-group">
+          
+            <input class="from-control mb-2" type="hidden" value="{{current_user.email}}" name="email" placeholder="Enter your Email"
+              required> 
+        </div>
+
+          <div class="form-group">
+          
+            <input class="from-control mb-2" type="hidden" value="{{current_user.first_name}} {{current_user.last_name}}" name="name" 
+              required> 
+        </div>
+
+
+        <div class="form-group">
+            <input class="from-control mb-2" type="text" name="title" placeholder="Enter post title"
+              required> 
+        </div>
+
+
+    <div class="form-group">
+            <textarea class="from-control mb-2" type="text" name="description" placeholder="Enter post description"
+              required> </textarea>
+        </div>
+
+        <div class="form-group">
+            <input class="from-control mb-2" type="file" name="image" 
+              required> 
+        </div>
+  <br>
+  
+  <div class="d-grip gap-2">
+  <button class="btn btn-primary" type="submit">upload</button>
+  </div>
+
+</form>
+</div>  
+</div>  
+  
+
+
+
+<hr>
+
+    <!-- project Section -->
+    <section id="project" class="project section">
+
+      <!-- Section Title -->
+      <div class="container section-title " data-aos="fade-up">
+        <span class="description-title">Posts</span>
+        <h2>Posts</h2>
+       
+      </div><!-- End Section Title -->
+           {% for d in data %}
+           
+         <div class="col-lg-9">
+            <div class="row gy-4 project-container isotope-container" data-aos="fade-up" data-aos-delay="200">
+
+              <div class="col-lg-6 col-md-6 project-item isotope-item filter-photography">
+                  <div class="project-wrap">
+                    <img src="{{url_for('static',filename='uploads/' ~ d.image)}}" class="img-fluid">
+                    <div class="project-info">
+                      <div class="content">
+                       
+                        <h4>{{d.title}} </h4>
+                         <span >{{d.description}}</span>
+                        <ul>
+                          <li><i class="bi "></i>Uploaded by:{{d.name}}</li>
+                            <li><i class="bi "></i>Uploaded date:{{d.date}}</li>
+                        </ul>
+                          
+                             
+                      </div>
+                    </div><!-- End project Item -->
+
+
+                        <!-- End project Container -->
+                  </div>
+               </div>
+
+            </div>
+            {% endfor %}
+         </div>
+   </section><!-- /project Section -->
+
+
+<hr>
+
+<footer class="site-footer">
+  <div class="footer-content">
+   
+    <p class="copyright">
+      © 2026 <strong>ammarkhan</strong>
+    </p>
+  </div>
+</footer>
+     
+
+
+
+
+  <!-- Preloader -->
+  <div id="preloader"></div>
+
+  <!-- Vendor JS Files -->
+  <script src="/static/assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+ 
+  <script src="/static/assets/vendor/aos/aos.js"></script>
+  <script src="/static/assets/vendor/purecounter/purecounter_vanilla.js"></script>
+  <script src="/static/assets/vendor/imagesloaded/imagesloaded.pkgd.min.js"></script>
+  <script src="/static/assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
+  <script src="/static/assets/vendor/swiper/swiper-bundle.min.js"></script>
+  <script src="/static/assets/vendor/glightbox/js/glightbox.min.js"></script>
+
+  <!-- Main JS File -->
+  <script src="/static/assets/js/main.js"></script>
+
+</body>
+
+</html>
+{% endblock form %}
